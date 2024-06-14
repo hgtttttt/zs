@@ -6,7 +6,8 @@ def main():
 	while True:
 		text = input("Enter text: ")
 		encoded_input = tokenizer(text, return_tensors="pt")
-		output = model.generate(**encoded_input, max_length=100, temperature=0.9)
+		output = model.generate(**encoded_input, max_length=100)
+		print(output)
 		print(tokenizer.decode(output, skip_special_tokens=True))
 
 if __name__ == '__main__':
